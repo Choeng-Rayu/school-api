@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use('/docs', serveSwagger, setupSwagger);
+// Change Swagger docs route from /docs to /api-docs for standard access
+app.use('/api-docs', serveSwagger, setupSwagger);
 
 app.use('/students', studentRoutes);
 app.use('/courses', courseRoutes);

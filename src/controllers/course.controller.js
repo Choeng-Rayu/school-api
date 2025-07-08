@@ -35,6 +35,7 @@ export const createCourse = async (req, res) => {
     try {
         const course = await db.Course.create(req.body);
         res.status(201).json(course);
+        console.log(course);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
